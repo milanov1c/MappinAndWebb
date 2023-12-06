@@ -1,0 +1,26 @@
+@media screen and (max-width:993px) {
+
+}
+@media screen and (max-width:769px) {
+    .mappin-mark{
+        width: 5%;
+    }
+    .mySaleText{
+        margin-top: 250px;
+    }
+    input,select{
+        margin: 0px auto!important;
+    }
+}
+@media screen and (max-width:576px) {
+
+    .mySaleText{
+        margin-top: 500px;
+    }
+} 
+@media screen and (max-width:426px) {
+
+    .mappin-mark{
+        width: 7%;
+    }
+} 
