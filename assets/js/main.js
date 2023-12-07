@@ -6,7 +6,8 @@ let prefixSaleImgClass="mySaleImgClass";
 //POCETAK WINDOW ONLOAD
 
 window.onload=function(){
-    if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
+    //if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
+    if(window.location.pathname=="/index.html" || window.location.pathname=='/')
     {
         //tekst iznad headera, menja se na 2 sekunde
         var currentIndex=0;
