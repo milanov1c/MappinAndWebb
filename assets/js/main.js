@@ -6,8 +6,8 @@ let prefixSaleImgClass="mySaleImgClass";
 //POCETAK WINDOW ONLOAD
 
 window.onload=function(){
-    //if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
-    if(window.location.pathname=="/index.html" || window.location.pathname=='/')
+    if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
+    //if(window.location.pathname=="/index.html" || window.location.pathname=='/')
     {
         //tekst iznad headera, menja se na 2 sekunde
         var currentIndex=0;
@@ -136,7 +136,7 @@ window.onload=function(){
             
         <div class="d-flex justify-content-between ps-2 pt-3">
           <small class="d-inline-block fw-bold text-uppercase bg-body-tertiary ps-2">New Arrival</small>
-          <i class="fa-regular fa-heart d-inline-block pe-3 saleHeart"></i>
+          <i class="fa-regular fa-heart d-inline-block pe-3 saleHeartIcon" id="${"saleHeart"+obj.id}"></i>
         </div>
         <div class="mySaleText">
           <small class="text-uppercase">Mappin &amp; Webb</small>
@@ -165,43 +165,53 @@ window.onload=function(){
             }
           );
     });
+    
+    
+    let saleHeartIcon=document.getElementsByClassName("saleHeartIcon");
+    console.log(saleHeartIcon);
+    console.log(document.getElementById("saleHeart1").classList.contains("fa-solid"));
+    
+    let faSolid="fa-solid";
+    var clickCount=0;
+    function saleHeartClick(){
+        saleObj.forEach(element=>{
+            let saleHeart= document.getElementById(`saleHeart${element.id}`);
+            
+            saleHeart.addEventListener("click", function(){
+            //neparni klik
+            saleHeart.classList.replace("fa-regular", "fa-solid");
+            //parni klik
+            if(clickCount%2){
+                saleHeart.classList.replace("fa-solid", "fa-regular");
+            }
+            
+            clickCount+=1;
+            console.log(clickCount)
+        })
+        })
 
-    var clickCount=1;
-    let saleHeart=document.getElementsByClassName("saleHeart");
-    function saleHeartChange(){
-        for(let i=0; i<saleHeart.length; i++)
-        {
-            saleHeart[i].addEventListener("mouseenter",function(){
-                saleHeart[i].classList.replace("fa-regular", "fa-solid");
-            })
-            
-            saleHeart[i].addEventListener("click",function(){
-                clickCount=clickCount+1;
-                if(clickCount%2){
-                    saleHeart[i].addEventListener("click",function(){
-                        saleHeart[i].classList.replace("fa-solid", "fa-regular");
-                        console.log(clickCount);
-                    }) 
-                    
-                }
-                else if(!clickCount%2){
-                    saleHeart[i].addEventListener("click",function(){
-                        saleHeart[i].classList.replace("fa-regular", "fa-solid");
-                        console.log(clickCount);
-                    }) 
-                }
-            })
-            
-            clickCount=0;
-            
-                
-                    
-               
-          
-        }
     }
-
-    saleHeartChange();
+    function saleHeartHover(){
+        saleObj.forEach(element => {
+           let saleHeart= document.getElementById(`saleHeart${element.id}`);
+           //pocetak hovera
+           saleHeart.addEventListener("mouseenter", function(){
+               saleHeart.classList.replace("fa-regular", "fa-solid");
+           });
+           
+               //kraj hovera
+           saleHeart.addEventListener("mouseleave", function(){
+            saleHeart.classList.replace("fa-solid", "fa-regular");
+            });
+            return;
+          
+           
+            
+        
+        }
+        )
+    }
+   
 }
 
 
