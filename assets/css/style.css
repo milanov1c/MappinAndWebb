@@ -13,6 +13,12 @@ body{
 img{
     width: 100%;
 }
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
 /* bootstrap classes override*/
 .card{
     outline: none!important;
@@ -75,12 +81,52 @@ label{
 .rbLabel{
     width: 10%;
 }
-button{
-    width: 100%;
+#submit{
+    width: 20%;
     padding: 7px 0px;
     color: var(--darkBlue);
     border: 1px solid var(--darkBlue);
+    margin-left: 40%;
 }
 .regExDanger{
     width: 70%;
+}
+.submitDanger{
+    margin-left: 30%!important;
+}
+
+#backToTop{
+    cursor: pointer;
+}
+footer a{
+    color: var(--darkBlue);
+}
+#footerSocials li{
+    display: inline;
+}
+#footerLogo{
+    width: 30%;
+    margin: 0px auto!important;
+    display: block;
+}
+#author{
+    width: 50%;
+}
+.opacityAnimation{
+    animation: opac 1.7s ease;
+}
+#preloader{
+    position: fixed;
+     z-index: 100;
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    transition: 500ms all;
+    align-items: center;
+}
+#preloader img{
+    width: 100px;
+    margin: 0px auto;
 }

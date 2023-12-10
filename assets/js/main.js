@@ -3,31 +3,259 @@
 let prefixImg="assets/img/";
 let prefixLink="/MappinAndWebb";
 let prefixSaleImgClass="mySaleImgClass";
+
+//OBJEKTI ZA DINAMICKO KREIRANJE
+const navObj=[
+    {name:"Home",
+     path:"index.html"
+    },
+    {name:"Brands",
+     path:"#brands"
+    },
+    {name:"Rolex",
+     path:"#rolex"
+    },
+    {name:"Watches",
+     path:"#watches"
+    },
+    {name:"Featured",
+     path:"#featured"
+    },
+    {name:"Sale",
+     path:"#sale"
+    },
+    {name:"Sell Your Watch",
+     path:"#contact"
+    }
+]
+
+const productObj=[
+    {
+        path:"card1.jpg",
+        heading:"Wedding Rings",
+        paragraph:"Wedding rings symbolize the eternal commitment and love between partners, traditionally worn on the ring finger."
+    },
+    {
+        path:"card2.jpg",
+        heading:"Necklaces",
+        paragraph:"A necklace is a piece of jewelry worn around the neck, often adorned with precious metals, gemstones, or meaningful pendants."
+    },
+    {
+        path:"card3.jpg",
+        heading:"Earrings",
+        paragraph:"Earrings, delicate whispers of adornment suspended from the ear, where the language of elegance is written in the shimmer of gemstones."
+    },
+    {
+        path:"card4.jpg",
+        heading:"Promising Rings",
+        paragraph:"Promising rings, encircling fingers like vows in tangible form, carry the weight of commitment and the sparkle of shared dreams."
+    }
+
+];
+
+const rolexObj=[
+    {
+        name:"Rolex Lady Datejust",
+        path:"watch1.jpg"
+    },
+    {
+        name:"Rolex Sea Dweller",
+        path:"watch2.jpg"
+    },
+    {
+        name:"Rolex Submariner",
+        path:"watch3.jpg"
+    },
+    {
+        name:"Rolex Oyster Perpetual",
+        path:"watch4.jpg"
+    },
+    {
+        name:"Rolex Explorer",
+        path:"watch5.jpg"
+    },
+    {
+        name:"Rolex Datejust",
+        path:"watch6.jpg"
+    },
+    {
+        name:"Rolex Air-King",
+        path:"watch7.jpg"
+    },
+    {
+        name:"Rolex Deepsea",
+        path:"watch8.jpg"
+    },
+    {
+        name:"Rolex Day-Date",
+        path:"watch9.jpg"
+    },
+];
+
+const featuredObj=[
+    {
+        path:"featured1.jpg",
+        name:"Omega",
+        model:"Seamaster Diver 300 Co-Axial Mens Watch",
+        price:"&#163;5,600.00"
+    },
+    {
+        path:"featured2.jpg",
+        name:"Tag Heuer",
+        model:"Formula 1 Quartz 43mm Mens Watch",
+        price:"&#163;1,500.00"
+    },
+    {
+        path:"featured3.jpg",
+        name:"IWC",
+        model:"Pilot's Mark XVIII 'Le Petit Prince' 40mm Mens Watch",
+        price:"&#163;4,100.00"
+    },
+    {
+        path:"featured4.jpg",
+        name:"Cartier",
+        model:"Tank Must, Large Model, Quartz Movement, Steel 33.7mm X 25.5mm",
+        price:"&#163;3,700.00"
+    }
+];
+
+const saleObj=[
+    {
+        img1:"sale1.jpg",
+        img2:"sale11.jpg",
+        name:"Platinum 2.00ct Solitaire Engagement Ring",
+        price:"28,000.00",
+        priceSale:"23,000.00",
+        installment:"534.81",
+        id:"1"
+    },
+    {
+        img1:"sale2.jpg",
+        img2:"sale21.jpg",
+        name:"Platinum 1.00ct Solitaire Engagement Ring",
+        price:"7,500.00",
+        priceSale:"6,000.00",
+        installment:"125.00",
+        id:"2"
+    },
+    {
+        img1:"sale3.jpg",
+        img2:"sale31.jpg",
+        name:"Platinum 1.50cttw Three Stone Diamond Ring",
+        price:"6,500.00",
+        priceSale:"5,000.00",
+        installment:"104.17",
+        id:"3"
+    },
+    {
+        img1:"sale4.jpg",
+        img2:"sale41.jpg",
+        name:"18ct Yellow Gold 1.50cttw Three Stone Ring",
+        price:"6,000.00",
+        priceSale:"4,750.00",
+        installment:"98.96",
+        id:"4"
+    }
+
+];
+const footerAboutObj=[
+    {
+        name:"Author",
+        path:"author.html"
+    },
+    {
+        name:"Portfolio",
+        path:"author.html"
+    },
+    {
+        name:"Documentation",
+        path:"documentation.pdf"
+    },
+    {
+        name:"Contact",
+        path:"#contact"
+    }
+];
+//NIZOVI ZA DINAMICKO ISPISIVANJE
+
+const swiperArr=["swiper1.png", "swiper2.png", "swiper3.png", "swiper4.png", "swiper5.png", "swiper6.png", "swiper7.png"
+,"swiper1.png", "swiper2.png", "swiper3.png", "swiper4.png", "swiper5.png", "swiper6.png", "swiper7.png"];
+//ELEMENTI ZA DINAMICKO ISPISIVANJE
+
+const slideTextArr=[ "20% Off Selected Wedding Rings", 
+"Free Gift with Selected Watches over £1000", "Pay Nothing Today with Interest Free Finance","Free Next Day Delivery until 9PM, 7 Days a Week* "];
+
+//DINAMICKA DDL
+
+const ddlContent=["Report a bug", "Technical support", "Ordering help", "Suggestions", "Other"];
+
+//REGEXI
+
+let regExName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})?$/;
+let regExLastName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{3,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{3,14})?$/;
+let regExEmail=/^[a-z0-9\.]+@[a-z]+\.[a-z]{2,3}$/;
+let regExPassword=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+
+
 //POCETAK WINDOW ONLOAD
 
+
 window.onload=function(){
-    if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
-    //if(window.location.pathname=="/index.html" || window.location.pathname=='/')
+    //if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
+
+    //PRELOADER
+    
+    $(document).ready(function () {
+        setTimeout(function () {
+            $("#preloader").animate(
+                {
+                    opacity: 0 
+                }, 1000, function () {
+                $(this).css("display", "none");
+    
+                $("body").animate({ opacity: 1 }, 1500);
+            });
+        }, 1700); 
+    });
+
+       
+    //TEKST IZNAD HEADERA
+    var currentIndex=0;
+    function slideText(){
+    
+    slideTextHeaderBlock.innerHTML=`<p class="text-center my-2">${slideTextArr[currentIndex]}</p>`;
+
+    currentIndex=(currentIndex+1)%slideTextArr.length;
+
+    }
+    setInterval(slideText, 2000);
+    
+    //FOOTER
+    for (const link of footerAboutObj) {
+        footerAboutText+=`<li class="pt-1"><a href="${link.path}">${link.name}</a></li>`
+    }
+    footerAbout.innerHTML=footerAboutText;
+
+    for (const link of navObj) {
+        footerNavText+=`<li class="pt-1"><a href="${link.path}">${link.name}</a></li>`;
+    }
+    footerNav.innerHTML=footerNavText;
+    if(window.location.pathname=="/index.html" || window.location.pathname=='/')
     {
-        //tekst iznad headera, menja se na 2 sekunde
-        var currentIndex=0;
-        function slideText(){
-    
-        slideTextHeaderBlock.innerHTML=`<p class="text-center my-2">${slideTextArr[currentIndex]}</p>`;
+        
+        
 
-        currentIndex=(currentIndex+1)%slideTextArr.length;
-    
-        }
 
-        setInterval(slideText, 2000);
-        //nav
-        for (const link of navObj) {
-            navText+=`<li class="nav-item">
-                        <a class="nav-link fw-bold mx-1 fs-5"  href="${link.path}">${link.name}</a>
-                    </li>`;
-        }
-        navBlock.innerHTML=navText;
-        //slider
+        
+        //NAVIGACIJA
+    for (const link of navObj) {
+        navText+=`<li class="nav-item">
+                    <a class="nav-link fw-bold mx-1 fs-5"  href="${link.path}">${link.name}</a>
+                </li>`;
+    }
+    navBlock.innerHTML=navText;
+
+        //PRVI SLAJDER
         let slider = new Swiper(".mySlider", {
             navigation: {
             nextEl: ".swiper-button-next",
@@ -36,7 +264,8 @@ window.onload=function(){
             loop:true
         });
 
-        //cards
+
+        //KARTICE SA NAKITOM
         for (const product of productObj) {
             card+=`<div class="col-md-3 col-sm-6 col-11">
             <div class="card mt-5">
@@ -50,9 +279,10 @@ window.onload=function(){
         }
         
         productCardBlock.innerHTML=card;
+        //SWIPER SA BRENDOVIMA
 
-        //swiper
-        for (const img of swiperArray) {
+        //SWIPER DINAMICKO ISPISIVANJE
+        for (const img of swiperArr) {
     
             swiperText+=`<div class="swiper-slide">
             <img src="${prefixImg+img}" />
@@ -60,10 +290,14 @@ window.onload=function(){
         }
         swiperBlock.innerHTML=swiperText;
     }
-    //swiper za brendove
+    //SWIPER OBJEKAT
     let swiper = new Swiper(".mySwiper", {
         slidesPerView: 7,
         spaceBetween: 30,
+        // autoplay:{
+        //     delay:1000,
+        //     pauseOnMouseEnter:true
+        // },
         loop:true,
         pagination: {
           el: ".swiper-pagination",
@@ -90,7 +324,9 @@ window.onload=function(){
             }
         }
       });
-    //roleks blokovi, kartice ispisane dinamicki
+
+    //BLOKOVI SA SATOVIMA, KARTICE 
+
     for (const card of rolexObj) {
         rolexText+=`<div class="col-md-4 col-12">
         <div class="card mt-5">
@@ -103,7 +339,7 @@ window.onload=function(){
     }
     firstRowRolex.innerHTML=rolexText;
 
-    //hover sa senkom na svim card elementima
+    //HOVER ZA KARTICE
     $(".card").hover(
         function () {
             $(this).addClass("scale1");
@@ -112,7 +348,9 @@ window.onload=function(){
             $(this).removeClass("scale1");
           }
       );
-    // featured satovi, dinamicki ispisani  
+
+    // FEATURED SATOVI, DINAMICKO ISPISIVANJE  
+
       for (const obj of featuredObj) {
         featuredText+=`<div class="col-md-3 px-1 col-sm-6 col-10">
         <img src="${prefixImg+obj.path}" alt="${obj.model}"/>
@@ -125,7 +363,7 @@ window.onload=function(){
     featuredBlock.innerHTML=featuredText;
 
 
-    //sale
+    //SALE SEKCIJA, DINAMICKO ISPISIVANJE
 
     for (const obj of saleObj) {
         saleContent+=`<div class="col-md-3 col-sm-6 col-10 mx-auto px-1 py-md-0 py-3 ${"mySale"+obj.id}">
@@ -169,173 +407,11 @@ window.onload=function(){
     
     let saleHeartIcon=document.getElementsByClassName("saleHeartIcon");
     console.log(saleHeartIcon);
-    console.log(document.getElementById("saleHeart1").classList.contains("fa-solid"));
     
-    let faSolid="fa-solid";
-    var clickCount=0;
-    function saleHeartClick(){
-        saleObj.forEach(element=>{
-            let saleHeart= document.getElementById(`saleHeart${element.id}`);
-            
-            saleHeart.addEventListener("click", function(){
-            //neparni klik
-            saleHeart.classList.replace("fa-regular", "fa-solid");
-            //parni klik
-            if(clickCount%2){
-                saleHeart.classList.replace("fa-solid", "fa-regular");
-            }
-            
-            clickCount+=1;
-            console.log(clickCount)
-        })
-        })
+    
+   saleHeartClick();
 
-    }
-    function saleHeartHover(){
-        saleObj.forEach(element => {
-           let saleHeart= document.getElementById(`saleHeart${element.id}`);
-           //pocetak hovera
-           saleHeart.addEventListener("mouseenter", function(){
-               saleHeart.classList.replace("fa-regular", "fa-solid");
-           });
-           
-               //kraj hovera
-           saleHeart.addEventListener("mouseleave", function(){
-            saleHeart.classList.replace("fa-solid", "fa-regular");
-            });
-            return;
-          
-           
-            
-        
-        }
-        )
-    }
-   
-}
-
-
-//KRAJ WINDOW ON LOAD
-
-// text slides, tekst se menja na 2 sekunde, dinamicki ispisan
-
-let slideTextHeaderBlock=document.getElementById("slideTextHeader");
-
-let slideTextArr=[ "20% Off Selected Wedding Rings", 
-"Free Gift with Selected Watches over £1000", "Pay Nothing Today with Interest Free Finance","Free Next Day Delivery until 9PM, 7 Days a Week* "];
-
-
-
-// nav, elementi su dinamicki ispisani
-
-let navBlock=document.getElementById("myNav");
-let navObj=[
-    {name:"Home",
-     path:"index.html"
-    },
-    {name:"Brands",
-     path:"#brands"
-    },
-    {name:"Rolex",
-     path:"#rolex"
-    },
-    {name:"Watches",
-     path:"#watches"
-    },
-    {name:"Featured",
-     path:"#featured"
-    },
-    {name:"Sale",
-     path:"#sale"
-    },
-    {name:"Sell Your Watch",
-     path:"#contact"
-    }
-]
-let navText="";
-
-
-
-// product cards, dinamicki ispisani
-
-let productCardBlock=document.getElementById("productCard");
-let productObj=[
-    {
-        path:"card1.jpg",
-        heading:"Wedding Rings",
-        paragraph:"Wedding rings symbolize the eternal commitment and love between partners, traditionally worn on the ring finger."
-    },
-    {
-        path:"card2.jpg",
-        heading:"Necklaces",
-        paragraph:"A necklace is a piece of jewelry worn around the neck, often adorned with precious metals, gemstones, or meaningful pendants."
-    },
-    {
-        path:"card3.jpg",
-        heading:"Earrings",
-        paragraph:"Earrings, delicate whispers of adornment suspended from the ear, where the language of elegance is written in the shimmer of gemstones."
-    },
-    {
-        path:"card4.jpg",
-        heading:"Promising Rings",
-        paragraph:"Promising rings, encircling fingers like vows in tangible form, carry the weight of commitment and the sparkle of shared dreams."
-    }
-
-];
-let card="";
-
-
-
-//swiper, napravljen swiper za logoe brendova, slike dinamicki dodate u html
-
-
-let swiperArray=["swiper1.png", "swiper2.png", "swiper3.png", "swiper4.png", "swiper5.png", "swiper6.png", "swiper7.png"
-,"swiper1.png", "swiper2.png", "swiper3.png", "swiper4.png", "swiper5.png", "swiper6.png", "swiper7.png"];
-let swiperBlock=document.getElementById("swiper-carousel");
-let swiperText=``;
-
-//blok o roleks satovima
-let rolexObj=[
-    {
-        name:"Rolex Lady Datejust",
-        path:"watch1.jpg"
-    },
-    {
-        name:"Rolex Sea Dweller",
-        path:"watch2.jpg"
-    },
-    {
-        name:"Rolex Submariner",
-        path:"watch3.jpg"
-    },
-    {
-        name:"Rolex Oyster Perpetual",
-        path:"watch4.jpg"
-    },
-    {
-        name:"Rolex Explorer",
-        path:"watch5.jpg"
-    },
-    {
-        name:"Rolex Datejust",
-        path:"watch6.jpg"
-    },
-    {
-        name:"Rolex Air-King",
-        path:"watch7.jpg"
-    },
-    {
-        name:"Rolex Deepsea",
-        path:"watch8.jpg"
-    },
-    {
-        name:"Rolex Day-Date",
-        path:"watch9.jpg"
-    },
-]
-let firstRowRolex=document.getElementById("rolexRow1");
-let rolexText=``;
-  var swiperWatches = new Swiper(".mySwiperWatches", {
+   var swiperWatches = new Swiper(".mySwiperWatches", {
     slidesPerView: 4,
     spaceBetween: 30,
     breakpoints:{
@@ -367,235 +443,16 @@ let rolexText=``;
     },
   });
 
+  //DINAMICKA DDL
 
-  
-
-let featuredBlock=document.getElementById("featuredBlock");
-
-let featuredObj=[
+  for(let i=0; i<ddlContent.length; i++)
     {
-        path:"featured1.jpg",
-        name:"Omega",
-        model:"Seamaster Diver 300 Co-Axial Mens Watch",
-        price:"&#163;5,600.00"
-    },
-    {
-        path:"featured2.jpg",
-        name:"Tag Heuer",
-        model:"Formula 1 Quartz 43mm Mens Watch",
-        price:"&#163;1,500.00"
-    },
-    {
-        path:"featured3.jpg",
-        name:"IWC",
-        model:"Pilot's Mark XVIII 'Le Petit Prince' 40mm Mens Watch",
-        price:"&#163;4,100.00"
-    },
-    {
-        path:"featured4.jpg",
-        name:"Cartier",
-        model:"Tank Must, Large Model, Quartz Movement, Steel 33.7mm X 25.5mm",
-        price:"&#163;3,700.00"
+        ddlText+=`<option value="${i+1}">${ddlContent[i]}</option>`;
     }
-]
-
-let featuredText="";
-
-
-
-let saleBlock=document.getElementById("saleBlock");
-
-let saleObj=[
-    {
-        img1:"sale1.jpg",
-        img2:"sale11.jpg",
-        name:"Platinum 2.00ct Solitaire Engagement Ring",
-        price:"28,000.00",
-        priceSale:"23,000.00",
-        installment:"534.81",
-        id:"1"
-    },
-    {
-        img1:"sale2.jpg",
-        img2:"sale21.jpg",
-        name:"Platinum 1.00ct Solitaire Engagement Ring",
-        price:"7,500.00",
-        priceSale:"6,000.00",
-        installment:"125.00",
-        id:"2"
-    },
-    {
-        img1:"sale3.jpg",
-        img2:"sale31.jpg",
-        name:"Platinum 1.50cttw Three Stone Diamond Ring",
-        price:"6,500.00",
-        priceSale:"5,000.00",
-        installment:"104.17",
-        id:"3"
-    },
-    {
-        img1:"sale4.jpg",
-        img2:"sale41.jpg",
-        name:"18ct Yellow Gold 1.50cttw Three Stone Ring",
-        price:"6,000.00",
-        priceSale:"4,750.00",
-        installment:"98.96",
-        id:"4"
-    }
-
-];
-
-let saleContent="";
-
-
-
-
-// $(".saleHeart").hover(
-//     function () {
-//         $(this).removeClass("fa-regular")
-//         $(this).addClass("fa-solid");
-//       },
-//       function () {
-//         $(this).removeClass("fa-solid");
-//         $(this).addClass("fa-regular");
-//       }
-// );
-
-//PITATI PROFESORKU NA KONSULTACIJAMA
-
-
-// function solidHeart(){
-//     $(".saleHeart").on("mouseover",function(){
-//         $(this).removeClass("fa-regular")
-//         $(this).addClass("fa-solid");
-//     })
-//     $(".saleHeart").on("click",function(){
-//         heartBool=true;
-//     })
-//     if(heartBool){
-
-//     }
-//     else{
-//         $(this).removeClass("fa-solid")
-//         $(this).addClass("fa-regular");
-
-//         $(this)
-//     }
-// }
-
-// $(".saleHeart").on("mouseover",
-//     function () {
-//         $(this).removeClass("fa-regular")
-//         $(this).addClass("fa-solid");
-//       }
-// );
-
-
-//var heartBool=false;
-
-
-// $(".saleHeart").click(
-//     function(){
-//         heartBool=true;
-//         console.log(heartBool);
-//         if(heartBool){
-           
-//         }
-//         else{
-//             $(".saleHeart").on("mouseout",function(){
-//                 $(this).removeClass("fa-solid");
-//                 $(this).addClass("fa-regular");
-//             });
-//         }
-//     }
-// )
-
-
-// $(".saleHeart").click(
-//     function () {
-//         $(this).removeClass("fa-regular")
-//         $(this).addClass("fa-solid");
-//         heartBool=true;
-//         if(heartBool){
-//             $(".saleHeart").mouseOver(
-//                 function(){
-//                     $(this).addClass("fa-solid");
-//                 }
-//             )
-//             $(".saleHeart").click(
-//                 function(){
-//                     $(this).removeClass("fa-solid");
-//                 },
-//                 function(){
-                    
-//                     $(this).addClass("fa-regular");
-
-//                 }
-//             )
-//         }
-//         else{
-//             $(this).removeClass("fa-solid");
-//         }
-//       }
-// );
-
-
-
-
- 
-    
-
-
-//dinamicki ispisana ddl
-
-let ddlContent=["Report a bug", "Technical support", "Ordering help", "Suggestions", "Other"];
-
-let ddlText=`<option value="0">Message Subject</option>`;
-
-for(let i=0; i<ddlContent.length; i++)
-{
-    ddlText+=`<option value="${i+1}">${ddlContent[i]}</option>`;
-}
 
 document.getElementById("ddlService").innerHTML=ddlText;
 
-//REGEXI 
-
-let regExName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})?$/;
-let regExLastName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{3,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{3,14})?$/;
-let regExEmail=/^[a-z](?=.*[a-z])(?=.*[0-9])\@(gmail.com|yahoo.com|hotmail.rs)$/;
-let regExPassword=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
-
-
-let nameValue=document.getElementById("fName");
-let lastNameValue=document.getElementById("lName");
-let emailValue=document.getElementById("email");
-let passwordValue=document.getElementById("password");
-let confirmValue=document.getElementById("rePassword");
-
-function regExTest(regEx,input){
-    if(!regEx.test(input.value)){
-        input.classList.add("border-danger");
-        input.nextElementSibling.classList.remove("d-none");
-    }
-    else{
-        
-        input.classList.remove("border-danger");
-        input.classList.add("border-success");
-        input.nextElementSibling.classList.add("d-none");
-    }
-}
-function confirm(input, confirmInput){
-    if(input.value!=confirmInput.value || confirmValue.value==""){
-        confirmInput.classList.add("border-danger");
-        confirmInput.nextElementSibling.classList.remove("d-none");
-    }
-    else{
-        input.classList.remove("border-danger");
-        input.classList.add("border-success");
-        input.nextElementSibling.classList.add("d-none");
-    }
-}
+//VALIDACIJA FORME
 
 document.getElementById("fName").addEventListener("blur",function(){
     regExTest(regExName, nameValue);
@@ -610,7 +467,220 @@ document.getElementById("password").addEventListener("blur",function(){
     regExTest(regExPassword, passwordValue);
 });
 document.getElementById("rePassword").addEventListener("blur",function(){
-    confirm(passwordValue, confirmValue);
+    confirmPass(passwordValue, confirmValue);
 });
+document.getElementById("submit").addEventListener("click",function(){
+    formCheck();
+});
+   
+
+}
 
 
+
+//KRAJ WINDOW ON LOAD
+
+
+
+// text slides, tekst se menja na 2 sekunde, dinamicki ispisan
+
+let slideTextHeaderBlock=document.getElementById("slideTextHeader");
+
+// nav, elementi su dinamicki ispisani
+
+let navBlock=document.getElementById("myNav");
+
+let navText="";
+
+// product cards, dinamicki ispisani
+
+let productCardBlock=document.getElementById("productCard");
+
+let card="";
+
+//swiper, napravljen swiper za logoe brendova, slike dinamicki dodate u html
+
+let swiperBlock=document.getElementById("swiper-carousel");
+let swiperText=``;
+
+//ROLEKS BLOKOVI
+
+let firstRowRolex=document.getElementById("rolexRow1");
+let rolexText=``;
+
+//FEATURED BLOKOVI
+let featuredBlock=document.getElementById("featuredBlock");
+
+let featuredText="";
+
+//SALE BLOKOVI
+
+let saleBlock=document.getElementById("saleBlock");
+let saleContent="";
+let faSolid="fa-solid";
+var clickCount=0;
+function saleHeartClick(){
+        saleObj.forEach(element=>{
+            let saleHeart= document.getElementById(`saleHeart${element.id}`);
+            
+            saleHeart.addEventListener("click", function(){
+            //neparni klik
+            saleHeart.classList.replace("fa-regular", "fa-solid");
+            //parni klik
+            if(clickCount%2){
+                saleHeart.classList.replace("fa-solid", "fa-regular");
+            }
+            
+            clickCount+=1;
+            console.log(clickCount)
+        })
+        })
+
+}
+
+//dinamicki ispisana ddl
+
+let ddlText=`<option value="0">Message Subject</option>`;
+
+
+
+//FORMA 
+
+let nameValue=document.getElementById("fName");
+let lastNameValue=document.getElementById("lName");
+let emailValue=document.getElementById("email");
+let passwordValue=document.getElementById("password");
+let confirmValue=document.getElementById("rePassword");
+let rbGender=document.getElementsByName("rbGender");
+let rbDanger=document.querySelector(".rbDanger");
+let ddlService=document.getElementById("ddlService");
+let submitButton=document.getElementById("submit");
+let form=document.getElementById("form");
+let formErrors= 0;
+
+function regExTest(regEx,input){
+    
+    if(!regEx.test(input.value)){
+        input.classList.add("border-danger");
+        input.nextElementSibling.classList.remove("d-none");
+        formErrors++;
+    }
+    else{
+        
+        input.classList.remove("border-danger");
+        input.classList.add("border-success");
+        input.nextElementSibling.classList.add("d-none");
+        formErrors=0;
+    }
+}
+function confirmPass(input, confirmInput){
+    if(confirmValue.value!=passwordValue.value || confirmValue.value==""){
+        confirmInput.classList.add("border-danger");
+        confirmInput.nextElementSibling.classList.remove("d-none");
+        formErrors++;
+    }
+    else{
+        confirmInput.classList.remove("border-danger");
+        confirmInput.classList.add("border-success");
+        confirmInput.nextElementSibling.classList.add("d-none");
+        formErrors=0;
+    }
+}
+var isChecked=false;
+
+function checkGender(){
+    for(let i=0; i<rbGender.length; i++)
+    {
+        if(rbGender[i].checked)
+        {
+            isChecked=true;
+        }
+
+    }
+    if(!isChecked)
+    {
+        rbDanger.classList.remove("d-none");
+        formErrors++;
+    }
+    else{
+        rbDanger.classList.add("d-none");
+        formErrors=0;
+    }
+}
+
+console.log(isChecked);
+function checkServices(){
+    if(ddlService.selectedIndex=="0")
+    {
+        ddlService.nextElementSibling.classList.remove("d-none");
+        ddlService.classList.add("border-danger");
+        formErrors++;
+    }
+    else
+    {
+        ddlService.nextElementSibling.classList.add("d-none");
+        ddlService.classList.remove("border-danger");
+        ddlService.classList.add("border-success");
+        formErrors=0;
+    }
+}
+function formCheck(){
+    regExTest(regExName, nameValue);
+    regExTest(regExLastName, lastNameValue);
+    regExTest(regExEmail, emailValue);
+    regExTest(regExPassword, passwordValue);
+    confirmPass(passwordValue, confirmValue);
+    checkGender();
+    checkServices();
+
+    if(formErrors==0)
+    {
+        submitButton.nextElementSibling.classList.add("d-none");
+    }
+    else
+    {
+        submitButton.nextElementSibling.classList.remove("d-none");
+    }
+};
+
+let backToTop=document.getElementById("backToTop");
+backToTop.addEventListener("click", function()
+{
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+})
+
+//FOOTER
+
+let footerAbout=document.getElementById("footerAbout");
+let footerAboutText="";
+
+let footerNav=document.getElementById("footerNav");
+let footerNavText="";
+
+const footerSocialObj=[{
+    icon:"fa-brands fa-instagram",
+    path:"https://instagram.com"
+}, 
+{
+    icon:"fa-brands fa-facebook",
+    path:"https://facebook.com"
+},
+{
+    icon:"fa-brands fa-linkedin",
+    path:"https://linkedin.com"
+},
+{
+    icon:"fa-brands fa-youtube",
+    path:"https://youtube.com"
+}];
+
+let footerSocials=document.getElementById("footerSocials");
+let footerSocialsText="";
+
+for (const link of footerSocialObj) {
+    footerSocialsText+=`<li class="ps-3"><a href="${link.path}"><i class="${link.icon}"></i></a></li>`
+}
+footerSocials.innerHTML=footerSocialsText;

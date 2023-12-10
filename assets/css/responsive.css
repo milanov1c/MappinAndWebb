@@ -10,6 +10,10 @@
     }
     input,select{
         margin: 0px auto!important;
+        display: block;
+    }
+    #footerLogo{
+        margin: 0px!important;
     }
 }
 @media screen and (max-width:576px) {
