@@ -201,7 +201,7 @@ let regExPassword=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!
 
 
 window.onload=function(){
-    //if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
+    //
 
     //PRELOADER
     
@@ -240,7 +240,8 @@ window.onload=function(){
         footerNavText+=`<li class="pt-1"><a href="${link.path}">${link.name}</a></li>`;
     }
     footerNav.innerHTML=footerNavText;
-    if(window.location.pathname=="/index.html" || window.location.pathname=='/')
+    //INDEX STRANICA USLOV
+    if(window.location.pathname==prefixLink+"/index.html" || window.location.pathname==prefixLink+'/')
     {
         
         
